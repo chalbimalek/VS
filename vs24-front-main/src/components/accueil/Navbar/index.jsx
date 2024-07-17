@@ -18,6 +18,7 @@ import LanguageSelector from "../../admin/outils/LanguageSelector";
 import { Trans } from "react-i18next";
 import { color } from "../../../assets/vendor/chart.js/helpers";
 import { Button } from "bootstrap";
+import img1 from '../../../images/VS.png';
 
 const lngs = {
   fr: { nativeName: "" },
@@ -26,7 +27,7 @@ const lngs = {
 
 const Navbar = ({ toggle, setShowDemandeClients,setShowDemandePubs }) => {
   const [scrollNav, setScrollNav] = useState(false);
-  const [logoSrc, setLogoSrc] = useState("/src/images/LN.png");
+  const [logoSrc, setLogoSrc] = useState(img1);
   const [dropdownOpen, setDropdownOpen] = useState(true); // State for dropdown
 
   const changeNav = () => {
@@ -69,11 +70,11 @@ const Navbar = ({ toggle, setShowDemandeClients,setShowDemandePubs }) => {
         <Trans>
           <Nav scrollNav={scrollNav}>
             <NavbarContainer>
-              <NavLogo to="https://www.linkedin.com/company/voltwise-solutions/" >
-              <a href="https://www.linkedin.com/company/voltwise-solutions/" target="_blank" rel="noopener noreferrer">
+              <NavLogo  >
+              <a >
                 <img
                   src={logoSrc}
-                  height={logoSrc.includes("RemoteHub") ? "40" : "40"}
+                  height={logoSrc.includes("RemoteHub") ? "80" : "60"}
                   alt="RemoteHub Logo"
                   loading="lazy"
                   style={{
@@ -99,7 +100,7 @@ const Navbar = ({ toggle, setShowDemandeClients,setShowDemandePubs }) => {
 
                 <NavItem>
                   <NavLinks
-                    to="valeurs"
+                   // to="valeurs"
                     
                     
                   >

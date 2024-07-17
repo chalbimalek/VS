@@ -3,27 +3,30 @@ import {Link}  from "react-router-dom";
 const currentLanguage = 'fr'; // Replace with your logic to get the language
 
 export  const FooterContainer = styled.footer`
-    background:#fffff;
-        box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.3); /* Inversez l'ombre pour la mettre en haut */
+    background: #9e0000;
+        margin-top: 132px;
 
-  
+        box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.3); /* Inversez l'ombre pour la mettre en haut */
+   @media only screen and (max-width : 600px){
 `;
 export const FooterWrap = styled.div`
-padding: 48px 24px;
+padding: 8px 4px;
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
 max-width: 1100%;
 margin: 0 auto;
-margin-top :100px
-    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.3); /* Inversez l'ombre pour la mettre en haut */
+box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.3); /* Inversez l'ombre pour la mettre en haut */
+ @media only screen and (max-width : 600px){
+    margin-top: 132px;
 
-`;
+
+    `;
 export const FooterLinksContainer = styled.div`
     display:flex;
     justify-content: center;
-    @media screen and (max-width : 820px){
+    @media only screen and (max-width : 600px){
     padding-top: 32px;
 
     }
@@ -79,13 +82,16 @@ display: flex;
   font-size: 16px;
   font-weight: 400;
   justify-content: space-between;
-
+  @media only screen and (max-width : 600px){
+    margin-top: -12px;
+    height: 250px;
+    padding-bottom: -170px ;
+}
 `;
 export  const SocialMediaWrap=styled.div`
  
-
     display: flex;
-  margin-top: 1px;
+  margin-bottom: 22px;
   width: 100%;
   max-width: 1038px;
   gap: 20px;
@@ -114,36 +120,40 @@ export  const SocialMediaWrap=styled.div`
     `;
     export const SocialIcons=styled.div`
        display: flex;
-  margin-top: 89px;
   width: 100%;
   max-width: 1438px;
-  gap: 450px;
+  gap: 150px;
   font-size: 16px;
   font-weight: 400;
   justify-content: space-between;
    max-width: 100%;
     flex-wrap: wrap;
     margin-top: 10px;
+    @media only screen and (max-width : 600px){
+        height: 0%;
+}
     `;
     export const SocialIcons1=styled.div`
-   color: #000;
+   color: #ffffff;
   font-family: Constantia, sans-serif;
   align-items: flex-start;
   display: flex;
   flex-direction: column;
     white-space: nowrap;
+  @media only screen and (max-width : 600px){
+        height: 100%;
 
-
+}
 `;
 export const Num=styled.div`
-    color: #757575;
-  font-family: Constantia, sans-serif;
-  margin-top: 0; // Supprimer l'espace entre les éléments
-white-space: nowrap;
+    color: #ffffff;
+ font-family: Constantia, sans-serif;
+    margin-top: 0; // Supprimer l'espace entre les éléments
+    white-space: nowrap;
 
 `;
     export  const SocialIconLink=styled.a`
-     color: #757575;
+     color: #ffffff;
   font-family: Constantia, sans-serif;
   margin-top: 0; // Supprimer l'espace entre les éléments
  text-decoration: none; // Supprimer le soulignement par défaut des liens
@@ -153,6 +163,26 @@ white-space: nowrap;
     color: #8fd1e3; // Couleur du texte au survol (facultatif)
   }
     }
+    @media only screen and (max-width : 600px){
+          flex-wrap: wrap; /* Permet à chaque ligne de s'enrouler */
+
+}
+    `;
+    export  const Linkedin=styled.a`
+     color: #ffffff;
+  font-family: Constantia, sans-serif;
+  margin-top: 0; // Supprimer l'espace entre les éléments
+ text-decoration: none; // Supprimer le soulignement par défaut des liens
+  white-space: nowrap;
+
+  &:hover {
+    color: #8fd1e3; // Couleur du texte au survol (facultatif)
+  }
+    
+    @media only screen and (max-width : 600px){
+          flex-wrap: wrap; /* Permet à chaque ligne de s'enrouler */
+
+}
     `;
 
 

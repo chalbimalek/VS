@@ -18,8 +18,13 @@ margin-top: 7px;
 
   background: ${({ lightBg, video }) =>
     video ? `url(${video}) no-repeat center center/cover` : (lightBg ? '#fff' : '#010606')};
-  @media screen and (max-width: 768px) {
-    padding: 100px 0;
+  
+  
+  @media screen and (max-width: 600px) {
+    padding: 200px 0;
+        flex-direction: column; /* Stack columns vertically on mobile */
+  display: flex;
+  margin-top:-220px
   }
 `;
 
@@ -27,14 +32,19 @@ margin-top: 7px;
  export const InfoWrapper = styled.div`
     display: grid;
     z-index: 1;
-    height: 860px;
+    height: 560px;
     max-width: 1100px;
     width: 100%;
     margin-right: auto;
     margin-left: auto;
-    padding: 0 24px;
+    padding: 0 10px;
     align-items: center;
     justify-content: center;
+         @media only screen and (max-width: 600px) {
+    display: flex;
+        flex-direction: column; /* Stack columns vertically on mobile */
+      margin-bottom: 400px
+  }
     `;
 
     export const InfoRow = styled.div`
@@ -50,6 +60,12 @@ margin-top: 7px;
     grid-template-areas: ${({ imgStart }) =>
       imgStart ? `'col1' 'col2'` : `'col1 col1' 'col2 col2'`};
   }
+
+         @media only screen and (max-width: 600px) {
+    display: flex;
+        flex-direction: column; /* Stack columns vertically on mobile */
+
+  }
 `;
 
 export const Column1 = styled.div`
@@ -63,6 +79,13 @@ export const Column1 = styled.div`
   width: 100%;
   gap: 14px;
   flex-wrap: wrap;
+       @media only screen and (max-width: 600px) {
+        display: flex;
+        flex-direction: column; /* Stack columns vertically on mobile */
+        margin-top:-2820px
+  
+  
+  }
 `;
 
 export const Column2 = styled.div`
@@ -70,11 +93,10 @@ export const Column2 = styled.div`
 
 display: flex;
   flex-direction: column; /* Alignement en colonne */
-  max-width: 991px;
   color: #000;
   font-size: 20px;
   align-items: flex-start; /* Alignement à gauche */
-  letter-spacing: 2px;
+  letter-spacing: 0.1px;
   font-weight: 400;
   text-align: justify;
   margin-bottom: 15px;
@@ -95,6 +117,15 @@ display: flex;
     width: 0.5px; /* Largeur de la barre */
     height: 80%;
     background-color: #535353;} /* Couleur de la barre */
+           @media only screen and (max-width: 600px) {
+    display: flex;
+        flex-direction: column; /* Stack columns vertically on mobile */
+        width: 100%;
+          letter-spacing:0px;
+              font-size: 6px; /* Ajuste la taille de la police pour mobile si nécessaire */
+
+        
+          }
 `;
 
   
@@ -103,6 +134,16 @@ export const TextWrapper = styled.div`
         padding-top: 0 ;
         padding-buttom: 60px;
         direction: ${getDirection(currentLanguage)}; // Conditional direction
+       
+               @media only screen and (max-width: 600px) {
+     display: flex;
+        flex-direction: column; /* Stack columns vertically on mobile */
+        width: 70%
+         
+
+  }
+       
+       
         `;
 export const TopLine = styled.p`
         color: #0070ad;
@@ -130,6 +171,8 @@ export const Heading = styled.h1`
 `;
 export const Subtitle = styled.p`
   font-family: Constantia, sans-serif;
+      text-align: left;
+
    /* Pour occuper tout l'espace disponible */
   flex-basis: auto; /* Utilisation de la base automatique */
   margin: auto 0; /* Marge automatique en haut et en bas */
@@ -167,6 +210,13 @@ export const Img = styled.img`
   margin-top: 4px;
    display: flex;
   flex-direction: column;
+     @media only screen and (max-width: 600px) {
+        display: flex;
+        flex-direction: column; /* Stack columns vertically on mobile */
+        margin-left:50px
+  
+  
+  }
 `;
 export const Bar = styled.div`
  border-color: rgba(83, 83, 83, 1);

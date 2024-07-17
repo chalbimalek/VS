@@ -62,7 +62,7 @@ const Home = () => {
           setShowDemandePubs={showDemandePubsHandler} 
         />
 
-       {/* <HeroSection />*/}
+        <HeroSection />
         <InfoSection {...homeObjOne} />
 
         <Services />

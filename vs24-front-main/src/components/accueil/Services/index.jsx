@@ -4,13 +4,18 @@ import Icon2 from '../../../images/svg-5.svg';
 import Icon3 from '../../../images/svg-8.svg';  
 import prec from '../../../images/prec2.png';
 import suiv from '../../../images/suiv1.png';
-import un from '../../../images/1.png';
-import deux from '../../../images/2.png';
-import trois from '../../../images/3.png';
-import quatre from '../../../images/4.png';
+import un from '../../../images/ok.png';
+import deux from '../../../images/cercle.png';
+import trois from '../../../images/hand.png';
+import quatre from '../../../images/okk.png';
 import inn from '../../../images/11.png';
 import partage from '../../../images/partage.png';
 import trans from '../../../images/transp.png';
+import Vector from '../../../images/Vector.png';
+import tr from '../../../images/tra.png';
+import g from '../../../images/gr.png';
+
+
 
 
 import { ServicesContainer,ServicesCard 
@@ -42,29 +47,29 @@ const Services = () => {
   
     const cards = [
       {
-        icon: inn,
+        icon: g,
         title: 'Innovation',
-        description: `En tant qu'entreprise spécialisée dans les solutions
-  électriques, "Voltwise Solutions" pourrait valoriser l'innovation
-  technologique en développant et en proposant des solutions
-  novatrices pour répondre aux besoins changeants du marché de
-  l'énergie électrique.`,
+        description: `Promotion de l'innovation technologique à travers le développement et la
+         proposition de solutions novatrices répondant aux évolutions du marché de l'énergie électrique.
+`,
       },
       {
-        icon: partage,
+        icon: Vector,
         title: 'Partage',
-        description: `Les power banks peuvent être partagées
-  entre plusieurs utilisateurs, ce qui permet à plusieurs personnes de
-  bénéficier de l'énergie stockée pour recharger leurs appareils
-  électroniques. Cela encourage le partage des ressources au sein
-  de la communauté`,
+        description: `Le partage de l'énergie stockée favorise la collaboration et la solidarité 
+        au sein de la communauté en permettant à chacun de recharger ses appareils électroniques.
+
+`,
       },
       {
-        icon: trans,
+        icon: tr,
         title: 'Transparence',
-        description: `Adoptation d’une politique de transparence envers les
-  utilisateurs concernant la manière dont leurs données sont
-  collectées, utilisées et partagées.`,
+        description: `Respect de la politique de transparence envers les utilisateurs 
+        concernant la collecte, l'utilisation et le partage de leurs données.
+
+
+
+`,
       },
     ];
   
@@ -78,9 +83,11 @@ const Services = () => {
   return (
     <ServicesContainer id="valeurs">
     <Trans>
-      <ServicesDiv>
- <ServicesH1>NOS VALEURS</ServicesH1>
+    <div >
+    <ServicesDiv >
+ <ServicesH1 style={{marginTop:'100px' ,marginBottom:'30px' }}>Nos Valeurs </ServicesH1>
       </ServicesDiv>
+    </div>
     <ServicesWrapper>
         <ServicesCard>
         <ServicesIcon src={cards[currentCard].icon}/>
@@ -89,7 +96,7 @@ const Services = () => {
             <ServicesP style={{ fontFamily: 'Constantia ,sans-serif', fontWeight: 'normal', color: '#757575'}}>
             {cards[currentCard].description}
             </ServicesP>
-            <NavigationButtons>
+            <NavigationButtons >
         <NavButton onClick={handlePrev}>
         <img src={prec} alt="prec" /> {/* Utiliser l'image pour le bouton prec */}
 
@@ -101,9 +108,9 @@ const Services = () => {
               </ServicesCard>
     </ServicesWrapper>
 
-    <div style={{marginTop:'200px' ,marginBottom:'300px' }}>
+    <div  >
     <ServicesDiv >
- <ServicesH1 style={{marginTop:'100px' ,marginBottom:'30px' }}>Pourquoi voltwise Solutions ?</ServicesH1>
+ <ServicesH1 style={{marginTop:'100px' ,marginBottom:'30px',fontWeight: 'bold' }}>Pourquoi voltwise Solutions ?</ServicesH1>
       </ServicesDiv>
     <div>
       <ServicesDivVS>
@@ -116,7 +123,6 @@ const Services = () => {
     </ServicesDivVS>
     </div>
             </div>
-   
             </Trans>
 
    </ServicesContainer >

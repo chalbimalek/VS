@@ -10,7 +10,7 @@ import {
   ArrowForward,
   ArrowRight,
 } from "./HeroElements";
-import Video from "../../../videos/video.mp4";
+import Video from "../../../videos/Bochra.mp4";
 import { Button } from "../ButtonElement";
 import { Trans } from "react-i18next";
 import DemandeClients from "../../admin/demande/demandeClients";
