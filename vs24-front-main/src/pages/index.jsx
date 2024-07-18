@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Sidebar from "../components/accueil/SideBar";
 import Navbar from "../components/accueil/Navbar";
 import HeroSection from "../components/accueil/HeroSection";
@@ -22,6 +22,29 @@ const Home = () => {
   const [showDemandeClients, setShowDemandeClients] = useState(false);
   const [showDemandePubs, setShowDemandePubs] = useState(false);
 
+  //////////////////
+  const [isNavVisible, setIsNavVisible] = useState(true);
+
+  const handleScroll = () => {
+    const infoSection = document.getElementById("info-section");
+    const nav = document.getElementById("navbar");
+
+    if (infoSection && nav) {
+      const infoSectionTop = infoSection.getBoundingClientRect().top;
+
+      if (infoSectionTop <= 0) {
+        setIsNavVisible(false);
+      } else {
+        setIsNavVisible(true);
+      }
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+  ////////////////////
   const toggle = () => {
     setIsOpen(!isOpen);
   };
@@ -56,14 +79,14 @@ const Home = () => {
       )}
       <Trans>
         <Sidebar isOpen={isOpen} toggle={toggle} />
-        <Navbar 
+        <Navbar id="navbar" isVisible={isNavVisible}
           toggle={toggle} 
           setShowDemandeClients={showDemandeClientsHandler}
           setShowDemandePubs={showDemandePubsHandler} 
         />
 
         <HeroSection />
-        <InfoSection {...homeObjOne} />
+        <InfoSection {...homeObjOne} id="info-section" />
 
         <Services />
       {/*  <InfoSection {...homeObjTwo} />

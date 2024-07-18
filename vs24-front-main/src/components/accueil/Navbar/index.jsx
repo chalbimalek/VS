@@ -12,6 +12,7 @@ import {
   NavBtn,
   NavBtnLink,
   NavDropDown,
+  
 } from "./NavbarElement"; // Make sure to import your styled components
 import { animateScroll as scroll } from "react-scroll";
 import LanguageSelector from "../../admin/outils/LanguageSelector";
@@ -25,10 +26,10 @@ const lngs = {
   en: { nativeName: "" },
 };
 
-const Navbar = ({ toggle, setShowDemandeClients,setShowDemandePubs }) => {
+const Navbar = ({isVisible , toggle, setShowDemandeClients,setShowDemandePubs }) => {
   const [scrollNav, setScrollNav] = useState(false);
   const [logoSrc, setLogoSrc] = useState(img1);
-  const [dropdownOpen, setDropdownOpen] = useState(true); // State for dropdown
+  const [dropdownOpen, setDropdownOpen] = useState(false); // State for dropdown
 
   const changeNav = () => {
     
@@ -68,7 +69,7 @@ const Navbar = ({ toggle, setShowDemandeClients,setShowDemandePubs }) => {
   return (
     <>
         <Trans>
-          <Nav scrollNav={scrollNav}>
+          <Nav isVisible ={isVisible }>
             <NavbarContainer>
               <NavLogo  >
               <a >
@@ -85,9 +86,9 @@ const Navbar = ({ toggle, setShowDemandeClients,setShowDemandePubs }) => {
                 />
               </a>
               </NavLogo>
-              {/*<MobileIcon onClick={toggle}>
+              <MobileIcon onClick={toggle}>
                 <FaBars />
-              </MobileIcon>*/}
+              </MobileIcon>
               <NavMenu>
               <NavItem>
                   <NavLinks
@@ -145,7 +146,7 @@ const Navbar = ({ toggle, setShowDemandeClients,setShowDemandePubs }) => {
                     Se Connecter
                   </NavBtnLink>
                 </NavBtn>
-             {/*   <NavDropDown className="col-sm-2">
+            <NavDropDown className="col-sm-2">
                   <div
                     style={{
                       display: "flex",
@@ -158,10 +159,12 @@ const Navbar = ({ toggle, setShowDemandeClients,setShowDemandePubs }) => {
                       onClick={toggleDropdown}
                       style={{
                         cursor: "pointer",
-                        color: scrollNav ? "#fff" : "#000",
+                        color: scrollNav ? "#0000" : "#000",
+                        gap: "10px"
                       }}
                     />
-                    <p style={{ marginTop: "15px", fontWeight: "bold",fontFamily:"Constantia" }}>
+                    <p style={{ marginTop: "15px", fontWeight: "bold",fontFamily:"Constantia" ,
+ }}>
                       Joignez
                     </p>
                   </div>
@@ -171,7 +174,7 @@ const Navbar = ({ toggle, setShowDemandeClients,setShowDemandePubs }) => {
                         position: "absolute",
                         top: "7.5vh",
                         left: 1190,
-                        background: "transparent",
+                        background: "#ffff",
                         borderRadius: "5px",
                         zIndex: 0,
                       }}
@@ -179,21 +182,21 @@ const Navbar = ({ toggle, setShowDemandeClients,setShowDemandePubs }) => {
                       <ul style={{ margin: 0, padding: 0 }}>
                         <li style={{ color: "transparent" }}>
                        
-                          <button onClick={handleShowDemandeClients}style={{background:'transparent',border:'none',color:scrollNav ? "#fff" : "#000",fontWeight: "500",fontFamily:"Constantia"}}> Client</button>
+                          <button onClick={handleShowDemandeClients}style={{background:'transparent',border:'none',color:scrollNav ? "#00000" : "#000",fontWeight: "500",fontFamily:"Constantia"}}> Client</button>
                         </li>
                         <li style={{ color: "transparent" }}>
-                        <button onClick={handleShowDemandePubs}style={{background:'transparent',border:'none',color:scrollNav ? "#fff" : "#000",fontWeight: "500",fontFamily:"Constantia"}}> Publicitaire</button>
+                        <button onClick={handleShowDemandePubs}style={{background:'transparent',border:'none',color:scrollNav ? "#00000" : "#000",fontWeight: "500",fontFamily:"Constantia"}}> Publicitaire</button>
 
                         </li>
                       </ul>
                     </div>
                   )}
-                </NavDropDown>*/}
+                </NavDropDown>
               </NavMenu>
             </NavbarContainer>
           </Nav>
         </Trans>
-        {/*</IconContext.Provider>*/}
+        {/*</></IconContext.Provider>*/}
     </>
   );
 };

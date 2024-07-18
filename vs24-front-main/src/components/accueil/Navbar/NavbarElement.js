@@ -13,9 +13,13 @@ export const Nav = styled.nav`
   font-size: 0.9rem;
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 20;
   width: 100%; /* Remplacer "auto" par "100%" */
-
+ ${({ isVisible }) =>
+    !isVisible &&
+    `
+    top: -80px; /* Cache la barre de navigation en la déplaçant vers le haut */
+  `}
   @media only screen and (max-width: 600px) {
     transition: 0.6s all ease;
   max-width: 100%; /* Remplacer "auto" par "100%" */
@@ -33,7 +37,7 @@ export const NavbarContainer = styled.div `
   width: 100%;
   padding: 8 0;
   max-width: 100%;
-  margin-right: 10px;
+  margin-right: - 40px;
   margin-left: 30px;
 @media only screen and (max-width: 600px) {
   margin-left: 10px;
@@ -72,7 +76,8 @@ export const MobileIcon = styled.div`
         transform :translate(-100%,80%);
         font-size: 1.8rem;
         cursor   :pointer;
-        color: #fff;
+        color: #00000;
+        margin-top: -20px;
     }
     
 `;
@@ -92,7 +97,8 @@ export const NavMenu = styled.ul `
 
 
   @media screen and (max-width:600px) {
-      
+        gap: 4px; /* Add space between the NavItems */
+
   }
 
 `;
@@ -104,12 +110,11 @@ export  const NavItem = styled.li `
   }
 `;
 export const NavDropDown=styled.li`
-display: inline-flex;
-margin-left:100px;
+ display: flex; /* Masqué par défaut */
 
-  @media screen and (max-width:300px) {
-    display:inline-flex;
-  }
+  @media screen and (max-width: 600px) {
+    display: none; /* Affiché sur les écrans mobiles */
+   
 `;
 
 export const NavLinks = styled(LinkS)`
@@ -146,7 +151,7 @@ export const NavBtn = styled.nav`
   margin-top: 20px;
 
   @media screen and (max-width:600px) {
-    display: flex;
+    display: none;
   }
 `;
 
@@ -155,7 +160,7 @@ export const NavBtnLink = styled(LinkR)`
   box-shadow: 0px 4.889px 4.889px 0px rgba(0, 0, 0, 0.25);
   background-color: #9e0000;
  
-  padding: 6px 23px;
+  padding: 6px 13px;
   font: 12px Constantia, sans-serif;
   text-decoration: none; // Supprimer le soulignement par défaut des liens
   color: #ffff; // Définir la couleur du texte
@@ -169,6 +174,29 @@ export const NavBtnLink = styled(LinkR)`
     display: flex;
      justify-content: center;
        align-items: center;
-       margin-left: -170px;
+       margin-left: -60px;
+  }
+`;
+const DropdownContent = styled.div`
+  display: ${props => (props.dropdownOpen ? 'block' : 'none')};
+  position: absolute;
+  top: 2.5em;
+  background: white;
+  border-radius: 5px;
+  z-index: 1;
+  min-width: 160px;
+`;
+
+const DropdownItem = styled.li`
+  list-style: none;
+  padding: 10px;
+  cursor: pointer;
+  font-family: 'Constantia';
+  font-weight: 500;
+  background: transparent;
+  border: none;
+  color: ${props => (props.scrollNav ? '#fff' : '#000')};
+  &:hover {
+    background: #f1f1f1;
   }
 `;

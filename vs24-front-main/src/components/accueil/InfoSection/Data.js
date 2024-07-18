@@ -1,10 +1,10 @@
-import img1 from '../../../images/VS.png';
+import img1 from '../../../../public/images/RemoteHub.png';
 import video2 from '../../../videos/cc.mp4';
 import img3 from '../../../images/svg-3.png';
+import Video from "../../../videos/Bochra.mp4";
 
 export const homeObjOne = {
   id: 'about',
-  lightBg: true,
   lightText: false,
   lightTextDesc: false,
   topLine: '',
@@ -16,7 +16,8 @@ export const homeObjOne = {
   alt: 'Welcome',
   dark: true,
   primary: true,
-  darkText: true
+  darkText: false,
+
 };
 
 export const homeObjTwo = {

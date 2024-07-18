@@ -1,13 +1,18 @@
 import styled from "styled-components";
 
 export const ServicesContainer = styled.div`
-  height: 100%;
-  display: flex;
+ color: #fff;
+
+  background: ${({ lightBg }) => (lightBg ? '#f9f9f9' : '#010606')};
+
+  position: relative;
+
+  z-index: 1;  display: flex;
   justify-content: center;
   align-items: center;
   background: #ffff;
   flex-direction: column;
-  margin-top:-110px;
+  margin-top:0px;
   @media only screen and (max-width: 600px) {
   padding: 5px 2px; /* Ajustement du padding pour mobile */
   height: 100%;
@@ -15,7 +20,23 @@ export const ServicesContainer = styled.div`
   }
 `;
 
+export const VideoBg = styled.video`
 
+  width: 100%;
+
+  height: 100%;
+
+  position: absolute;
+
+  top: 0;
+
+  left: 0;
+
+  object-fit: cover;
+
+  z-index: -1;
+
+`;
 export const NavigationButtons = styled.div`
   display: flex;
   justify-content: space-between;
@@ -165,7 +186,7 @@ export const ServicesPVS = styled.p`
 `;
 export const ServicesDivVS = styled.div`
      display: grid;    
-  margin-top: 88px;
+  margin-bottom: 88px;
  // Ajouter pour centrer horizontalement
   font-size: 88px;
   color: #000;
@@ -179,7 +200,7 @@ padding:10px
  @media only screen and (max-width: 600px)
  {
     padding: 1px 30px;
-        margin:30px 0;
+  margin-bottom: 88px;
           width: 100%;
             margin-bottom: 110px;
   }
@@ -207,7 +228,7 @@ export const ServicesDiv = styled.div`
   align-items: center; // Changer "end" en "center" pour centrer verticalement
   justify-content: center; // Ajouter pour centrer horizontalement
   font-size: 48px;
-  color: #000;
+  color: #ffffffff;
   font-weight: 400;
   text-align: center;
 panding:20px
@@ -238,33 +259,9 @@ export const ServicesH1 = styled.h1`
   font-size: 38px;
 font-weight:200
     width: 100px; // Adjust the width as needed
+     position: relative; // Nécessaire pour le positionnement des pseudo-éléments
+    color: #fffffff;
 
-
-   position: relative; // Nécessaire pour le positionnement des pseudo-éléments
-  color: #000;
-
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    top: 80%;
-    width: 100px; // Longueur de la ligne, ajustez selon vos besoins
-    height: 1px;
-    background-color: rgba(158, 158, 158, 1);
-  }
-
-  &::before {
-    left: -120px; // Ajustez cette valeur pour positionner correctement la ligne à gauche
-  }
-
-  &::after {
-    right: -120px; // Ajustez cette valeur pour positionner correctement la ligne à droite
-  }
-
-
-  @media screen and (max-width: 991px) {
-    font-size: 20px;
-  }
     @media only screen and (max-width: 200px)
  {
          display: flex;

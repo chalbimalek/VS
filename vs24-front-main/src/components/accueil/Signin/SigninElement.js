@@ -115,7 +115,7 @@ cursor:pointer;
 
 `;
 export const FormButton = styled.button`
-  background: #8fd1e3;
+  background: #9e0000;
   padding: 16px 0;
   border: none;
   border-radius: 4px;
@@ -126,9 +126,16 @@ export const FormButton = styled.button`
   width: 100%; // Ensure the button takes the full width of its container
 
   &:hover {
-    background: #76b8c8; // Add a background color change on hover for better UX
-    color: #2a2559;
-    transition: 0.3s ease-out;
+    background: #ffff; // Add a background color change on hover for better UX
+    color: #ffffff;
+    transition: 0.1s ease-out;
+  }
+    @media screen and (max-width: 768px) {
+  &:hover {
+    background: #ffffff; // Add a background color change on hover for better UX
+    color: #ffffff;
+    transition: 0.1s ease-out;
+  }
   }
 `;
 export const Text = styled.span`
@@ -143,9 +150,9 @@ export const FormLinks= styled(Link)`
     padding: 10px  22px;
     text-align:center;
     font-size: 16px;
-    color: #8fd1e3;
+    color: #ffff;
     &:hover{
-        color: #2a2559;
+        color: #ffff;
        transition:  0.3s ease-out;
 
     }

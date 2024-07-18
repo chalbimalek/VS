@@ -14,6 +14,7 @@ import trans from '../../../images/transp.png';
 import Vector from '../../../images/Vector.png';
 import tr from '../../../images/tra.png';
 import g from '../../../images/gr.png';
+import Video from "../../../videos/sectionBg.mp4";
 
 
 
@@ -21,7 +22,7 @@ import g from '../../../images/gr.png';
 import { ServicesContainer,ServicesCard 
 ,ServicesH1,ServicesH2,ServicesIcon,ServicesWrapper,ServicesDiv,NavButton,NavigationButtons,ServicesCardVS,ServicesIconVs,
 ServicesPVS,ServicesDivVS,
-ServicesP} from './ServicesElement'
+ServicesP,VideoBg} from './ServicesElement'
 import { Trans } from 'react-i18next';
 const Services = () => {
     
@@ -82,6 +83,8 @@ const Services = () => {
     };
   return (
     <ServicesContainer id="valeurs">
+            <VideoBg autoPlay loop muted src={Video} type="video/mp4"/>
+
     <Trans>
     <div >
     <ServicesDiv >
@@ -92,7 +95,7 @@ const Services = () => {
         <ServicesCard>
         <ServicesIcon src={cards[currentCard].icon}/>
 
-            <ServicesH2 style={{ fontFamily: 'Constantia, sans-serif', fontWeight: 'bold' }}>{cards[currentCard].title}</ServicesH2>
+            <ServicesH2 style={{ fontFamily: 'Constantia, sans-serif', fontWeight: 'bold', color: '#000' }}>{cards[currentCard].title}</ServicesH2>
             <ServicesP style={{ fontFamily: 'Constantia ,sans-serif', fontWeight: 'normal', color: '#757575'}}>
             {cards[currentCard].description}
             </ServicesP>
@@ -112,6 +115,7 @@ const Services = () => {
     <ServicesDiv >
  <ServicesH1 style={{marginTop:'100px' ,marginBottom:'30px',fontWeight: 'bold' }}>Pourquoi voltwise Solutions ?</ServicesH1>
       </ServicesDiv>
+    </div>
     <div>
       <ServicesDivVS>
       {Vs.map((item, index) => (
@@ -121,7 +125,6 @@ const Services = () => {
         </ServicesCardVS>
       ))}
     </ServicesDivVS>
-    </div>
             </div>
             </Trans>
 

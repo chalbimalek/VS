@@ -4,10 +4,12 @@ const currentLanguage = 'fr'; // Replace with your logic to get the language
 
 export  const FooterContainer = styled.footer`
     background: #9e0000;
-        margin-top: 132px;
+        margin-top: 0px;
 
         box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.3); /* Inversez l'ombre pour la mettre en haut */
    @media only screen and (max-width : 600px){
+   
+   }
 `;
 export const FooterWrap = styled.div`
 padding: 8px 4px;
@@ -19,7 +21,7 @@ max-width: 1100%;
 margin: 0 auto;
 box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.3); /* Inversez l'ombre pour la mettre en haut */
  @media only screen and (max-width : 600px){
-    margin-top: 132px;
+    margin-top: 0px;
 
 
     `;
